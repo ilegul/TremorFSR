@@ -1,0 +1,14 @@
+=== run_campaign Thu Sep 10 10:22:58 AM UTC 2026 ===
+--- BEFORE: uptime ---
+ 10:22:58 up 62 days,  3:39,  2 users,  load average: 1.04, 4.90, 4.51
+--- BEFORE: who ---
+giannessi pts/1        2026-09-07 16:40 (tmux(1575062).%0)
+giannessi pts/2        2026-09-08 15:03 (tmux(1575062).%2)
+--- nproc ---
+256
+--- AFTER: uptime ---
+ 12:32:38 up 62 days,  5:49,  2 users,  load average: 5.16, 12.88, 8.42
+--- AFTER: who ---
+giannessi pts/1        2026-09-07 16:40 (tmux(1575062).%0)
+giannessi pts/2        2026-09-08 15:03 (tmux(1575062).%2)
+DONE Thu Sep 10 12:32:38 PM UTC 2026

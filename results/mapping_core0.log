@@ -1,0 +1,24 @@
+loaded calm        300000 samples
+loaded mild_5hz    300000 samples
+loaded tremor_5hz  300000 samples
+
+--- correctness: one session of each input ---
+input        windows  mean index  max index    dominant   NORMAL   PRE_AL    ALERT
+calm            1156      0.0231     0.0299   131.59 Hz     1156        0        0
+mild_5hz        1156      0.2336     0.2574     4.88 Hz        0     1156        0
+tremor_5hz      1156      0.9760     0.9772     4.88 Hz        0        2     1154
+
+--- granularity ---
+  one window      596.1 us
+  one session     0.690 s   (1156 windows)
+  ratio            1158 windows per task
+
+256 independent session-analysis jobs, 7 runs each
+
+--- farm-only (thread-mapping experiment) ---
+farm(128)
+   runs:   1.412   1.444   1.413   1.412   1.411   1.412   1.414
+farm(128)  mean=1.4125  min=1.4120  max=1.4140
+farm(256)
+   runs:   1.216   1.135   1.103   1.171   1.120   1.222   1.225
+farm(256)  mean=1.1728  min=1.1200  max=1.2220

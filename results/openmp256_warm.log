@@ -1,0 +1,23 @@
+=== openmp-256 warm Sat Sep 12 02:12:24 PM UTC 2026 ===
+ 14:12:24 up 64 days,  7:28,  2 users,  load average: 0.43, 0.13, 0.04
+loaded calm        300000 samples
+loaded mild_5hz    300000 samples
+loaded tremor_5hz  300000 samples
+
+--- correctness: one session of each input ---
+input        windows  mean index  max index    dominant   NORMAL   PRE_AL    ALERT
+calm            1156      0.0231     0.0299   131.59 Hz     1156        0        0
+mild_5hz        1156      0.2336     0.2574     4.88 Hz        0     1156        0
+tremor_5hz      1156      0.9760     0.9772     4.88 Hz        0        2     1154
+
+--- granularity ---
+  one window      595.8 us
+  one session     0.689 s   (1156 windows)
+  ratio            1157 windows per task
+
+256 independent session-analysis jobs, 7 runs each
+
+--- openmp-only (warm re-measurement) ---
+openmp(256)
+   runs:   1.153   1.042   1.049   1.010   0.980   0.849   0.722
+openmp(256)  mean=0.9862  min=0.8490  max=1.0490

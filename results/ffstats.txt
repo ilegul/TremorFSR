@@ -1,0 +1,26 @@
+# ffStats: illustrative 24-job profiling run on Ampere (Source -> Compute -> Drain).
+# Only the TOTAL svc ticks are used, and they show Compute dominating:
+# 578093000 for Compute against 5760 for Source and 16240 for Drain.
+# On this ARM build FastFlow's per-task min/max svc counters are unreliable
+# (the Compute "min" exceeds the total and its "max" is a wrapped unsigned
+# value near 2^64), so the min/max fields below are ignored. The Drain
+# pop-lost counter is the collector spinning while it waits for results.
+=== ffStats, Source -> Compute -> Drain ===
+
+ffTime: 16578.2 ms
+--- pipeline:
+ID: 0  work-time (ms): 0.01
+  n. tasks      : 1
+  svc ticks     : 5760 (min= 5760 max= 5760)
+  n. push lost  : 0 (ticks=0)
+  n. pop lost   : 0 (ticks=0)
+ID: 1  work-time (ms): 16578.1
+  n. tasks      : 24
+  svc ticks     : 578093000 (min= 690327200 max= 18446744073401019416)
+  n. push lost  : 0 (ticks=0)
+  n. pop lost   : 0 (ticks=0)
+ID: 2  work-time (ms): 16577.9
+  n. tasks      : 24
+  svc ticks     : 16240 (min= 480 max= 1080)
+  n. push lost  : 0 (ticks=0)
+  n. pop lost   : 15869384 (ticks=15869384000)

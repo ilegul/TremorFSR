@@ -1,0 +1,18 @@
+# build artefacts: everything here is rebuilt by the Makefile
+/benchmark
+/benchmark_trace
+/live
+*.exe
+*.o
+
+# editor and system leftovers
+*~
+.vscode/
+Thumbs.db
+
+# report builder temp
+*.tmpbase.docx
+~$*.docx
+~$*.doc
+*_backup_*.docx
+*backup*.docx
